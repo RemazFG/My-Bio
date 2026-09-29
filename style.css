@@ -1,0 +1,409 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Red Hat Text", sans-serif;
+}
+
+:root {
+    --color-bg: #FFFFFF;
+    --color-bg-alt: #eae9e985;
+    --color-primary: #7F5283;
+    --color-secondary: #A6D1E6;
+    --color-light-text: #57595B;
+    --color-text: #3D3C42;
+}   
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg-alt);
+} 
+
+h1 {
+    font-size: clamp(32px, 6vw, 56px); /* Scales smoothly down on mobile */
+    line-height: 1.25;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--color-secondary);
+}
+
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+/* Ensure images never overflow their container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --------------- header styles start ----------------*/
+.site-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid var(--color-bg-alt);
+    z-index: 1000;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .link {
+    color: inherit;
+    font-size: 18px;
+}
+
+.header-nav .link:hover {
+    color: var(--color-secondary);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+button {
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+/* ------------- header styles end --------------- */
+
+/* ------------- Main styles start ----------------*/
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* hero section */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.tag {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hero-content {
+    font-size: 16px;
+    color: var(--color-text);
+    padding: 0 10px;
+    margin: 12px auto 24px auto;
+    max-width: 600px;
+}
+
+#job-title {
+    color: var(--color-light-text);
+}
+
+/* buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    padding: 12px 24px;
+    border-radius: 999px;
+    color: var(--color-bg);
+    font-weight: 500;
+    transition: ease 0.25s;
+    margin: 4px;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px 0 rgba(7, 4, 4, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px 0 rgba(7, 4, 4, 0.15);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+/* about section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    background-color: var(--color-bg);
+}
+
+.about-section img {
+    border-radius: 12px;
+    box-shadow: 0 10px 20px 0 rgba(7, 4, 4, 0.15);
+    margin-bottom: 28px;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: var(--color-text);
+}
+
+.about-tag {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.about-p {
+    padding: 8px 0;
+    color: var(--color-text);
+    max-width: 800px;
+}
+
+/* skills section */
+.skills-section {
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    /* auto-fit automatically scales down to fewer columns on small screens */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.skills-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: ease 0.25s;
+}
+
+.skills-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(7, 4, 4, 0.12);
+}
+
+.skill-tag {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.skill-title {
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.skill-des {
+    color: var(--color-light-text);
+    font-size: 14px;
+}
+
+/* work section */
+.work-section {
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+.work-grid {
+    display: grid;
+    /* Adapts flexibly between 1, 2, or 3 columns depending on container width */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.work-card {
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 24px;
+    transition: ease 0.25s;
+    background-color: var(--color-bg);
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(7, 4, 4, 0.12);
+}
+
+.work-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    color: var(--color-bg);
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+.work-card-title {
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.work-card-des {
+    color: var(--color-light-text);
+    text-align: left;
+    font-size: 14px;
+}
+
+/* contact section */
+.contact-section {
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.contact-p {
+    padding: 12px 0;
+    color: var(--color-text);
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+}
+
+/* footer */
+footer {
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ------------ Media Queries ------------------------- */
+.section{
+    min-height: 90vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skills-section,
+.work-section {
+    width: 100%;
+    text-align: center;
+    padding: 80px 0;
+}
+
+/* Force both grids to fill the exact same 1100px width */
+.skills-grid,
+.work-grid {
+    width: 100%;
+    margin: 40px auto 0 auto;
+    }
+
+/* 1. Base rule for every full-screen section */
+.hero-section,
+.about-section,
+.skills-section,
+.work-section,
+.contact-section {
+    min-height: 100vh;           /* Takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* Centers content vertically */
+    align-items: center;         /* Centers content horizontally */
+    padding: 60px 0;             /* Prevents content touching screen edges if height is small */
+    box-sizing: border-box;
+}
+
+/* 2. Offset the first section by the header height so it doesn't cause overflow */
+.hero-section {
+    /* If your header is ~60px tall, subtract it from 100vh */
+    min-height: calc(100vh - 60px); 
+}
+
+/* 3. Mobile safety: let sections grow naturally if cards or text exceed screen height */
+@media (max-width: 500px) {
+    .header-nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block; /* Forces the hamburger to appear */
+    }
+    .hero-section,
+    .about-section,
+    .skills-section,
+    .work-section,
+    .contact-section {
+        min-height: 100vh;       /* Still attempts 100vh */
+        height: auto;            /* Lets it expand if stacked cards exceed the screen height */
+        padding: 80px 16px;
+    }
+}
